@@ -1,0 +1,12 @@
+<?php
+require_once('onlyadminallowed.php');
+include('directorystructure.php');
+if(isset($_GET["dir"]))
+{
+    dirStructure($_GET["dir"]);
+}
+else 
+{
+    dirStructure();
+}
+?>

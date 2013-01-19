@@ -1,0 +1,11 @@
+ 
+#newswidget
+{
+    float: left;
+}
+#newswidget .newsentry
+{
+    width: 100%;
+    margin-top: 10px;
+    border: 1px solid;
+}

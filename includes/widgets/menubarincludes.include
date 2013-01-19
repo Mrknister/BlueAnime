@@ -1,0 +1,53 @@
+<script type="text/javascript" src="../javascript/jquery-1.7.2.js" ></script>
+<link href="index.css" rel="stylesheet" type="text/css"  />
+<link rel="stylesheet" type="text/css" href="/includes/widgets/menubar.css" />
+<link rel='shortcut icon' href="/favicon.ico" type="image/x-icon" />
+<script type="text/javascript">
+
+var is_closed = true;
+var to_close = false;
+var opened_div= "home";
+
+function openmenu(divid)
+{
+	
+	closemenu();
+	if(!is_closed)
+	{
+	 return;
+ }
+	
+	opened_div = divid;
+	
+	 
+ is_closed=false;
+ $(divid).show();
+ $(divid).animate({width:'80%'},500);
+}
+
+
+function invokeclose()
+{
+	to_close=true;
+	setTimeout(closemenu,10);
+}
+function cancel_close()
+{
+	to_close = false;
+}
+function closemenu(	)
+{
+	if(to_close == false)
+	 return;
+	if(is_closed)
+	 return;
+
+	
+	$(opened_div).hide();
+	$(opened_div).animate({width:'0%'});
+	is_closed = true;
+	to_close = false;	
+}
+
+
+</script>
