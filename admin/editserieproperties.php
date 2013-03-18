@@ -36,8 +36,6 @@ $query = "select Id,Name,'In' from Genres where Id  in (Select G_ID from SerieIn
 <tr><td>Genres:</td><td>
 <table>
 <?php
-$query = "select Id,Name,'checked=\\\"checked\\\"' from Genres where Id  in (Select G_ID from SerieInGenre where S_ID=$sid) union all select Id,Name,'' from Genres where Id not in (Select G_ID from SerieInGenre where S_ID=$sid)"; //if anyone has a better solution I'd appreciate if he told it to me 
-
 $count =1;
 if($result2 = $mysqli->query($query))
 {

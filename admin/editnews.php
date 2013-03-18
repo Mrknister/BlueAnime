@@ -6,7 +6,7 @@
 </head>
 <body>
 <?php
-require_once('onlyadminallowed.php');
+require_once( $_SERVER['DOCUMENT_ROOT'].'/includes/onlyadminallowed.php');
 require_once( $_SERVER['DOCUMENT_ROOT'].'/includes/mysqlconfig.php');
 
 ?>

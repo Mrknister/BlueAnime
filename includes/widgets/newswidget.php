@@ -2,6 +2,8 @@
 <div id="newswidget">
 <?php
 require_once($_SERVER['DOCUMENT_ROOT'].'/includes/news.php');
+require_once($_SERVER['DOCUMENT_ROOT'].'/includes/user.php');
+
 $news = new News;
 $news->load_entries();
 foreach($news->news as $newsentry)

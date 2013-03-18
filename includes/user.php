@@ -2,10 +2,10 @@
 require_once($_SERVER['DOCUMENT_ROOT'].'/includes/error.php');
 class User
 {
-    private $user_id;
+    private $user_id = 0;
     public $name;
     public $email;
-    public $userlevel;
+    public $userlevel = 0;
     
     
     
@@ -18,17 +18,26 @@ class User
         
         if(!isset($_SESSION['Id']))
         {
-        	   return;
+            return;
         }
+        
+        $this->user_id = $_SESSION['Id'];
+        
+        
         if(isset($_SESSION['User']))
         {
+            $this->user_id = $_SESSION['User']->user_id;
             $this->name = $_SESSION['User']->name;
             $this->email = $_SESSION['User']->email;
             $this->userlevel = $_SESSION['User']->userlevel;
         }
-        $this->user_id = $_SESSION['Id'];
+        else 
+        {
+            return;
+        }
+        
     }
-    
+    /*
     public function load_data()
     {
         require_once($_SERVER['DOCUMENT_ROOT'].'/includes/mysqlconfig.php');
@@ -55,7 +64,7 @@ class User
         $mysqli->close();
         $queryresult->free();
         
-    }
+    }*/
     
     public function login($name,$password)
     {
@@ -101,6 +110,22 @@ class User
         $queryresult->free();
         return true;
     }
+    public function is_admin()
+    {
+        if($userlevel>=100)
+        {
+            return true;
+        }
+        return false;
+    }
+    public function is_logged_in()
+    {
+        if($user_id == 0)
+        {
+            return false;
+        }
+        return true;
+    }
 }
 function register($username,$email,$userlevel=1)
 {
@@ -134,5 +159,6 @@ function check_username($username)
     return true;
 }
 
+$c_user = new User;
 
 ?>
