@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 5.5.28, for debian-linux-gnu (i686)
+-- MySQL dump 10.13  Distrib 5.5.29, for debian-linux-gnu (x86_64)
 --
 -- Host: localhost    Database: BlueAnime
 -- ------------------------------------------------------
--- Server version	5.5.28-0ubuntu0.12.10.2
+-- Server version	5.5.29-0ubuntu0.12.10.1
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -16,11 +16,36 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `ChatMessages`
+--
+
+DROP TABLE IF EXISTS `ChatMessages`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `ChatMessages` (
+  `C_Id` int(11) NOT NULL AUTO_INCREMENT,
+  `U_Id` int(11) NOT NULL,
+  `Message` text NOT NULL,
+  `CreationDate` datetime NOT NULL,
+  `Edited` tinyint(1) NOT NULL DEFAULT '0',
+  `Blocked` tinyint(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`C_Id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `ChatMessages`
+--
+
+LOCK TABLES `ChatMessages` WRITE;
+/*!40000 ALTER TABLE `ChatMessages` DISABLE KEYS */;
+INSERT INTO `ChatMessages` VALUES (1,1,'Hallo Welt!','2013-01-18 19:01:44',1,0),(2,1,'Tschüss Welt :(','2013-01-18 19:01:44',0,0);
+/*!40000 ALTER TABLE `ChatMessages` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `Folgen`
 --
-CREATE DATABASE /*!32312 IF NOT EXISTS*/ `BlueAnime` /*!40100 DEFAULT CHARACTER SET latin1 */;
-
-USE `BlueAnime`;
 
 DROP TABLE IF EXISTS `Folgen`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
@@ -81,7 +106,7 @@ CREATE TABLE `News` (
   `Text` text NOT NULL,
   `CreationDate` date NOT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -90,7 +115,7 @@ CREATE TABLE `News` (
 
 LOCK TABLES `News` WRITE;
 /*!40000 ALTER TABLE `News` DISABLE KEYS */;
-INSERT INTO `News` VALUES (1,'Eine Sehr Randome erste Nachricht','Dönerbuden haben sich in Deutschland zu einer Animefangemeinde zusammen geschlossen','2012-12-30'),(2,'Zweite sehr Randome Nachricht','Die erste Nachricht wahr eine erfundene Testnachricht ( aber verrats keinem!)','2012-12-30'),(3,'3. Nachricht','Für Testnachrichten gehen mir langsam die Ideen aus','2012-12-30'),(4,'test4','Ein ZufÃ¤lliger text mit Ã„s und Ã–s und Ãœs und ÃŸ','2012-12-30');
+INSERT INTO `News` VALUES (4,'test4','Ein ZufÃ¤lliger text mit Ã„s und Ã–s und Ãœs und ÃŸ','2012-12-30'),(5,'test5','Noch ein Text, der verschiedene tests enthÃ¤lt!','2013-01-17');
 /*!40000 ALTER TABLE `News` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -213,4 +238,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2013-01-16 19:16:06
+-- Dump completed on 2013-03-19  8:30:32
