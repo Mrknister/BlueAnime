@@ -14,8 +14,8 @@ function openmenu(divid)
 	closemenu();
 	if(!is_closed)
 	{
-	 return;
- }
+	    return;
+	}
 	
 	opened_div = divid;
 	

@@ -1,7 +1,8 @@
 <?php
-require_once($_SERVER[ 'DOCUMENT_ROOT' ].'/includes/userfunctions.php');
+require_once($_SERVER[ 'DOCUMENT_ROOT' ].'/includes/user.php');
 
-if(get_user_level()<100)
+$c_user = new User;
+if(!$c_user->is_admin())
 {
 	die('Du hast keine Rechte!');
 }

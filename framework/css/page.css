@@ -1,0 +1,48 @@
+#topwidget
+{
+    width: 100%;
+    height: 120px;
+    background-color: #1049A9;
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+}
+#leftwidget
+{
+    width: 20%;
+    height: 100%;
+    float: left;
+
+    background-color: #4479D4;
+}
+
+#rightwidget
+{
+    width: 20%;
+    height: 100%;
+
+    background-color: #4479D4;
+    float: right;
+    
+}
+#page
+{
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: ;
+}
+#main
+{
+    width: 100%;    
+    position: relative;
+    background-color: #052C6E;
+    height: 700px;
+    overflow: visible;
+    
+}
+body
+{
+    margin: 0;
+    padding: 0;
+}

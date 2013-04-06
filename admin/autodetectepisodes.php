@@ -1,5 +1,6 @@
 <?php
-require_once('onlyadminallowed.php');
+require_once($_SERVER['DOCUMENT_ROOT'].'/includes/onlyadminallowed.php');
+
 if(!isset($_GET['folder']))
 {
     die('Es fehlt der Ordnerparameter.' );

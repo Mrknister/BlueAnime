@@ -1,6 +1,7 @@
 <?php
-require_once('../includes/mysqlconfig.php');
-require_once('onlyadminallowed.php');
+require_once($_SERVER['DOCUMENT_ROOT'].'/includes/mysqlconfig.php');
+require_once($_SERVER['DOCUMENT_ROOT'].'/includes/onlyadminallowed.php');
+
 if(!isset($_GET['serie']))
 {
     die('Der Parameter serie ist nicht gesetzt. Schäm dich.');

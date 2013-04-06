@@ -1,7 +1,7 @@
 <?php
 //This file must alwas be included
 
-function private_log_error($message,$importance)  // message: message to be logged, importance: 1=just a warning for example bad login 5= shit is going down for example couldnt create folder or mysql 
+function private_log_error($message,$importance = 1)  // message: message to be logged, importance: 1=just a warning for example bad login 5= shit is going down for example couldnt create folder or mysql 
 {
     echo "Importance: $importance\n Message: $message\n\n"; // currently just debugging
     echo "___________________________________________________________________\n\n";

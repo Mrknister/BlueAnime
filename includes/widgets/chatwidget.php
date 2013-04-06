@@ -1,10 +1,9 @@
 
-<div id="chatwidget">
 <?php
 require_once($_SERVER['DOCUMENT_ROOT'].'/includes/chat.php');
 $chat = new Chat;
 $chat->load_messages();
-foreach($chat->chatmessages as $message) 
+foreach($chat->getChatmessages() as $message) 
 {
 ?>
 
@@ -14,7 +13,7 @@ foreach($chat->chatmessages as $message)
     {
         #hier muss irgendwas gemacht werden, für den fall, dass es editiert wurde
     } ?>    
-    <div class="newsdate"><?php
+    <div class="chatdate"><?php
     echo $message->CreationDate; // das sollte mit css kleiner gemacht werden 
     ?></div>
 
@@ -24,4 +23,3 @@ foreach($chat->chatmessages as $message)
 }
 ?>
 
-</div>

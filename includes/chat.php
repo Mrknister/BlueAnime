@@ -1,4 +1,6 @@
 <?php
+require_once($_SERVER['DOCUMENT_ROOT'].'/includes/error.php');
+
 
 class ChatMessage 
 {
@@ -29,7 +31,8 @@ class ChatMessage
 
 class Chat 
 {
-    public $chatmessages = null;
+    private $chatmessages = null;
+    
     public function load_messages($howmany = 5,$offset = 0)
     {
         if(!(is_numeric($howmany) && is_numeric($offset)))
@@ -38,20 +41,22 @@ class Chat
         }
         require_once($_SERVER['DOCUMENT_ROOT'].'/includes/mysqlconfig.php');
         $mysqli = connect_with_messagesreader();
-        $query = "select C_Id,U_Id,Message,DATE_FORMAT(CreationDate,'%H:%i') as CreationDate,Edited,Blocked from ChatMessages order by CreationDate desc limit $offset, $howmany";
+        $query = "select C_Id,U_Id,Message,DATE_FORMAT(CreationDate,'%H:%i') as FormattedDate,Edited,Blocked from ChatMessages order by CreationDate desc limit $offset, $howmany";
         $result = $mysqli->query($query);
-        if($mysqli->errno)
+        if(handle_mysql_error($mysqli,$query))
         {
-            echo $mysqli->error;
-            $mysqli->close();
             return false;
         }
         $this->chatmessages = array();
         while($tmp = $result->fetch_array())
         {
-            $this->chatmessages[] = new ChatMessage($tmp['C_Id'],$tmp['U_Id'],$tmp['Message'],$tmp['CreationDate'],$tmp['Edited'],$tmp['Blocked']);
+            $this->chatmessages[] = new ChatMessage($tmp['C_Id'],$tmp['U_Id'],$tmp['Message'],$tmp['FormattedDate'],$tmp['Edited'],$tmp['Blocked']);
         }
         return true;
+    }
+    public function getChatmessages()
+    {
+        return $this->chatmessages;
     }
 }
 

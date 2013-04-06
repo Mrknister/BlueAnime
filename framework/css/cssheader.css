@@ -1,0 +1,11 @@
+body { margin:0; padding:0; border:0 }
+#header {position:relative;height: 80px; background: #a0a0a0}
+#logo {position:absolute;top: 5px; left: 20px}
+#team {position:absolute;bottom: 5px; left: 20px}
+#team a {text-decoration: none;font-family: sans-serif;color: black;}
+#loginandregister {position:absolute;bottom: 5px; right: 20px}
+#loginandregister a {text-decoration: none;font-family: sans-serif;color: black;}
+
+
+
+

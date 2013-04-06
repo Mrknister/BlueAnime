@@ -10,6 +10,7 @@ if(isset($_POST['username']) && isset( $_POST['password'] ))
     if($success === true)
     {
         header('Location: /home.php');
+        exit(0);
     }
     
     
