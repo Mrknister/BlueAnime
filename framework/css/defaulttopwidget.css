@@ -1,7 +1,48 @@
-body { margin:0; padding:0; border:0 }
-#header {position:relative;height: 80px; background: #a0a0a0}
-#logo {position:absolute;top: 5px; left: 20px}
-#team {position:absolute;bottom: 5px; left: 20px}
-#team a {text-decoration: none;font-family: sans-serif;color: black;}
-#user {position:absolute;bottom: 5px; right: 20px}
-#user a {text-decoration: none;font-family: sans-serif;color: black;}
+
+#header 
+{
+    position:relative;
+    height: 80px;
+    background: #a0a0a0
+
+}
+    
+#logo 
+{
+    
+    position:absolute;
+    top: 5px;
+    left: 5px;
+    font-weight: bold;
+    
+    font-size: 19px;
+}
+
+#team 
+{
+    position:absolute;
+    bottom: 5px; 
+    left: 20px
+}
+#team a 
+{
+    text-decoration: none;
+    font-family: sans-serif; 
+    font-weight: bold;
+    color: black;
+    font-size: 18px;
+}
+#user 
+{
+    position:absolute;
+    bottom: 5px;
+    right: 20px;
+}
+#user a 
+{
+    text-decoration: underline;
+    font-family: sans-serif;
+    color: darkblue;
+    font-weight: bold;
+    font-size: 18px;
+}

@@ -15,7 +15,7 @@ class Page
     private $leftwidget;
     private $rightwidget;
     private $content;
-    public function __construct(Content $content = null)
+    public function __construct($content = null)
     {
         if($content == null)
         {

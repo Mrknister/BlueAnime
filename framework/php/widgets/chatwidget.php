@@ -8,15 +8,22 @@ class ChatWidget extends SideWidget
 {
     public function getHeaderAttributes()
     {
-        return array(
+        $jquery = new JSLocation();
+        $jquery->setLocation('/javascript/jquery-1.7.2.js');
+        return array($jquery,
             new CSSLocation('chatwidget.css'),
             new JSLocation('chatwidget.js')
         );
         
     }
     public function writeContent()
-    {
-        echo "Chat";
+    {?>
+<div id="chatwidget">
+    <div id="chatlog">
+    </div>
+    <textarea name="chatinput" id="chatinput" rows="2" ></textarea>
+</div>
+<?php 
     }
 }
 ?>

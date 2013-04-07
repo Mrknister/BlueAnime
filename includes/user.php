@@ -72,6 +72,10 @@ class User
         $queryresult->free();
         return true;
     }
+    public function get_id()
+    {
+        return $this->user_id;
+    }
     public function get_name()
     {
         return $this->name;
@@ -91,6 +95,10 @@ class User
             return false;
         }
         return true;
+    }
+    public function is_banned_from_chat()
+    {
+        return false;//someday here will be something interesting
     }
 }
 

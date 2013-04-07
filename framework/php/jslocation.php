@@ -17,9 +17,13 @@ private $location;
     {
         $this->location = '/framework/javascript/'.$name;
     }
+    public function setLocation($location)
+    {
+        $this->location = $location;
+    }
     public function getHtmlTag()
     {
-        return '<script src="quadrat.jshref="'.$this->location.'" type="text/javascript"></script>';
+        return '<script src="'.$this->location.'" type="text/javascript"></script>';
     }
 }
 

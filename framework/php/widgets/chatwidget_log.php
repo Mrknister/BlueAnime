@@ -1,14 +1,13 @@
 
 <?php
 require_once($_SERVER['DOCUMENT_ROOT'].'/includes/chat.php');
-$chat = new Chat;
-$chat->load_messages();
-foreach($chat->getChatmessages() as $message) 
+
+foreach(loadChatMessages() as $message) 
 {
 ?>
 
 <div class="chatmessage">
-        <?php echo $message->Message;
+        <?php echo '<u>'.$message->U_Name.':</u> '.$message->Message;
     if($message->Edited)
     {
         #hier muss irgendwas gemacht werden, für den fall, dass es editiert wurde

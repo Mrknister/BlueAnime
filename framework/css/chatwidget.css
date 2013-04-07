@@ -1,0 +1,50 @@
+#chatwidget
+{
+    width: 100%;
+    padding: 0 4px;
+    overflow: hidden;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #052C6E;
+}
+#chatlog
+{
+    background: black;
+    color: gray;
+    width: 100%-8px;
+    
+    overflow-y: scroll;
+    overflow-x: hidden; 
+    height: 220px;
+    padding: 4px;
+
+    border:0;
+    margin-top: 5px;
+}
+#chatlog .chatmessage
+{
+    padding-bottom: 10px;
+    width: 100%;
+    position: relative;
+    margin-bottom: 1px;
+    font-size: 13px;
+}
+#chatlog .chatdate
+{
+    text-align: right;
+    font-size: 9px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+#chatinput
+{
+    width: 100%;
+    height: 35px;
+    border:0;
+    resize: none;
+    margin-top: 3px;
+    margin-bottom: 5px;
+    padding:0;
+}

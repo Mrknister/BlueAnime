@@ -18,6 +18,10 @@ private $location;
     {
         $this->location = '/framework/css/'.$name;
     }
+    public function setLocation($location)
+    {
+        $this->location = $location;
+    }
     public function getHtmlTag()
     {
         return '<link rel="stylesheet" type="text/css" href="'.$this->location.'" />';

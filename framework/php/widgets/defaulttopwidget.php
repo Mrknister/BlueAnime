@@ -18,7 +18,7 @@ class DefaultTopWidget extends TopWidget
         
     ?>
 <div id="logo"> 
-        <img src="/pictures/logo-kubuntu.png" width="36" />
+        <img src="/pictures/logo-kubuntu.png" width="36" /> JJS Solutions
 </div>  
 <div id="user">
         <?php 
@@ -30,11 +30,11 @@ class DefaultTopWidget extends TopWidget
         else {
         ?>
         
-        <a href="/login.php" target="_blank">login</a>/<a href="/register.php" target="_blank">registrieren</a>
+        <a href="/login.php" >login</a>/<a href="/register.php" >registrieren</a>
         <?php } ?>
 </div>
 <div id="team">
-        <a href="/register.php" target="_blank">&Uuml;ber uns</a>
+        <a href="/register.php" >&Uuml;ber uns</a>
 </div>
         
 

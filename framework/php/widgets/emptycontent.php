@@ -9,5 +9,4 @@ class EmptyContent extends Content
     public function writeContent()
     {}
 }
-
 ?>
