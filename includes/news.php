@@ -67,7 +67,7 @@ public function load_entries($howmany = 5,$offset = 0)
     }
     require_once($_SERVER['DOCUMENT_ROOT'].'/includes/mysqlconfig.php');
     $mysqli = connect_with_messagesreader();
-    $query = "select Id,Title,Text,DATE_FORMAT(CreationDate,'%d.%m. %Y') as FormattedDate from News order by CreationDate desc limit $offset, $howmany";
+    $query = "select Id,Title,Text,DATE_FORMAT(CreationDate,'%d.%m. %Y') as FormattedDate from News order by CreationDate limit $offset, $howmany";
     $result = $mysqli->query($query);
     if($mysqli->errno)
     {
@@ -96,7 +96,7 @@ function create_news_entry($title,$text)
     $mysqli = connect_with_messageswriter();
     $title = $mysqli->real_escape_string($title);
     $text = $mysqli->real_escape_string($text);
-    $query = "insert into News (Title,Text,CreationDate) values ('$title','$text',CURDATE())";
+    $query = "insert into News (Title,Text,CreationDate) values ('$title','$text',Now())";
     if(!$mysqli->real_query($query))
     {
         private_log_error( $mysqli->error,5 );

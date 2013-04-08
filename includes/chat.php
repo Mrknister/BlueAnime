@@ -27,15 +27,15 @@ class ChatMessage
 
 
 
-function loadChatMessages($howmany = 5,$offset = 0)
+function loadChatMessages($howmany = 20)
 {
-    if(!(is_numeric($howmany) && is_numeric($offset)))
+    if(!is_numeric($howmany) )
     {
         return null;
     }
     include_once($_SERVER['DOCUMENT_ROOT'].'/includes/mysqlconfig.php');
     $mysqli = connect_with_messagesreader();
-    $query = "select cm.C_Id,cm.U_Id,Users.Name,cm.Message,DATE_FORMAT(cm.CreationDate,'%H:%i') as FormattedDate,Edited,Blocked from ChatMessages as cm,Users where Users.Id = cm.U_Id order by cm.CreationDate asc limit $offset, $howmany";
+    $query = "select cm.C_Id,cm.U_Id,Users.Name,cm.Message,DATE_FORMAT(cm.CreationDate,'%H:%i') as FormattedDate,Edited,Blocked from ChatMessages as cm,Users where Users.Id = cm.U_Id and cm.C_Id >= (select max(C_Id) from ChatMessages) - $howmany";
     $result = $mysqli->query($query);
     if(handle_mysql_error($mysqli,$query))
     {

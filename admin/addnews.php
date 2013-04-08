@@ -34,18 +34,17 @@ else if(isset($_POST['submit']))
     if($is_valid)
     {
         require_once($_SERVER['DOCUMENT_ROOT'].'/includes/news.php');
-        create_news_entry($_POST['title'],$_POST['post']);
+        if(create_news_entry(htmlentities($_POST['title']),htmlentities($_POST['post'])))
+        {
+            die("success");
+        }
+        
     }
 }
 
 
 ?>
-
-
-
-
-
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
 <meta charset="utf-8" />

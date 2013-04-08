@@ -40,9 +40,17 @@
 }
 #user a 
 {
-    text-decoration: underline;
+    text-decoration: none;
     font-family: sans-serif;
-    color: darkblue;
+    color: black;
     font-weight: bold;
     font-size: 18px;
+}
+#user a:hover
+{
+    color: darkblue;
+}
+#team a:hover
+{
+    color: darkblue;
 }
