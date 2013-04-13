@@ -29,7 +29,7 @@ class Serie
         {
             return false;
         }
-        if(!is_numeric($this->sid)
+        if(!is_numeric($this->sid))
             return false;
         $mysqli = connect_with_animereader();
         $query = 'select Name,Userlevel,Year,Shortdescription,Description,Picturename from Serien where Id='.$this->sid;
