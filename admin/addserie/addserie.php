@@ -56,7 +56,6 @@ Serie Hinzufügen
 <script type="text/javascript" src="../javascript/jquery-1.7.2.js"></script>
 </head>
 <body>
-<?php require_once('onlyadminallowed.php'); ?>
 <form enctype="multipart/form-data" action="addserie.php" method="POST">
 <table >
 <?php

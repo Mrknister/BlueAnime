@@ -57,7 +57,7 @@ class Page
     }
     public function write()
     {
-        $allhattribs =$this->headerattributes;
+        $allhattribs = array_merge($this->headerattributes,$this->content->getHeaderAttributes());
         
         $contentwidth=100;
         
@@ -95,7 +95,7 @@ class Page
 {
     height: 100%;
     width: <?php echo $contentwidth ?>%;
-    background-color: #6A92D4;
+    background-color: #f2f1f0;
     float: left;
     
 }
@@ -104,7 +104,7 @@ class Page
 
 
 </head>
-<body>
+<body bgcolor="black">
 <div id="page">
 <?php // write the topwidget
         if(isset($this->topwidget))

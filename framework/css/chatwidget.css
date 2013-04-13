@@ -6,12 +6,12 @@
     width: 95%;
     margin-left: auto;
     margin-right: auto;
-    background-color: #052C6E;
+    background-color: #3e3d39;
 }
 #chatlog
 {
-    background: black;
-    color: gray;
+    background: #f2f1f0;
+    color: black;
     width: 100%-8px;
     
     overflow-y: scroll;
@@ -47,4 +47,5 @@
     margin-top: 3px;
     margin-bottom: 5px;
     padding:0;
+    background-color: #f2f1f0;
 }
