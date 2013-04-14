@@ -35,3 +35,13 @@
     right: 5px;
     height: 10px;
 }
+.newsentry a
+{
+
+    color: #fff;
+}
+.newsentry a:hover
+{
+
+    color: #f07746;
+}

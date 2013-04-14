@@ -67,7 +67,7 @@ public function load_entries($howmany = 5,$offset = 0)
     }
     require_once($_SERVER['DOCUMENT_ROOT'].'/includes/mysqlconfig.php');
     $mysqli = connect_with_messagesreader();
-    $query = "select Id,Title,Text,DATE_FORMAT(CreationDate,'%d.%m. %Y') as FormattedDate from News order by CreationDate limit $offset, $howmany";
+    $query = "select Id,Title,Text,DATE_FORMAT(CreationDate,'%d.%m. %Y') as FormattedDate from News order by CreationDate desc limit $offset, $howmany";
     $result = $mysqli->query($query);
     if($mysqli->errno)
     {

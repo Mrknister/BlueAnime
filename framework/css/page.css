@@ -48,3 +48,12 @@ body
     font-family: arial, helvetica, sans-serif;
     //font: italic small-caps bold 1em/1.5em verdana, sans-serif;
 }
+a
+{
+    color: #fff;
+    text-decoration: none;
+}
+a:hover
+{
+    color: #f07746;
+}

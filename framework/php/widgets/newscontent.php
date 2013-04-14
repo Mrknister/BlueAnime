@@ -14,9 +14,16 @@ class NewsContent extends Content
     {
         require_once($_SERVER['DOCUMENT_ROOT'].'/includes/news.php');
         require_once($_SERVER['DOCUMENT_ROOT'].'/includes/user.php');
-
+        $user = new User();
         $news = new News;
         $news->load_entries();
+        if($user->is_admin())
+        {?>
+<div class="newsentry">
+    <div class="newstitle"><a href="/admin/addnews.php" >News Hinzuf&uuml;gen</a></div>
+</div>
+<?php
+        }
         foreach($news->getNews() as $newsentry)
         {
 ?>
@@ -27,7 +34,6 @@ class NewsContent extends Content
     </div>
     <div class="newsdate"><?php echo $newsentry->date; ?></div>
 </div>
-
 <?php
         }
     }

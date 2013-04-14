@@ -25,7 +25,10 @@ class DefaultTopWidget extends TopWidget
         if($user->is_logged_in())
         {
             echo $user->get_name();
-            
+            if($user->is_admin())
+            {
+                echo '  <a href="/admin/" style="font-size:14px">Administration</a>';
+            }
         }
         else {
         ?>

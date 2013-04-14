@@ -1,4 +1,3 @@
-
 #header 
 {
     position:relative;
@@ -6,18 +5,14 @@
     background: #a0a0a0
 
 }
-    
 #logo 
 {
-    
     position:absolute;
     top: 5px;
     left: 5px;
     font-weight: bold;
-    
     font-size: 19px;
 }
-
 #team 
 {
     position:absolute;
@@ -37,6 +32,10 @@
     position:absolute;
     bottom: 5px;
     right: 20px;
+    color: black;
+    font-weight: bold;
+    font-size: 18px;
+    font-family: sans-serif;
 }
 #user a 
 {
@@ -48,9 +47,9 @@
 }
 #user a:hover
 {
-    color: darkblue;
+    color: #f07746;
 }
 #team a:hover
 {
-    color: darkblue;
+    color: #f07746;
 }
