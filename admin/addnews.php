@@ -25,7 +25,11 @@ if(isset($_POST['preview']))
     $error = !$is_valid;
     if($is_valid)
     {
-        echo "Preview";
+        include_once($_SERVER['DOCUMENT_ROOT'].'/admin/newspreview.php');
+        include_once($_SERVER['DOCUMENT_ROOT'].'/framework/framework.php');
+        $page = get_default_page(new NewsPreview($_POST['title'],$_POST['post']));
+        $page->write();
+        exit(0);
     }
 }
 else if(isset($_POST['submit']))
