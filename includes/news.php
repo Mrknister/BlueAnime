@@ -94,8 +94,8 @@ function create_news_entry($title,$text)
     require_once($_SERVER['DOCUMENT_ROOT'].'/includes/onlyadminallowed.php');
     require_once($_SERVER['DOCUMENT_ROOT'].'/includes/mysqlconfig.php');
     $mysqli = connect_with_messageswriter();
-    $title = $mysqli->real_escape_string($title);
-    $text = $mysqli->real_escape_string($text);
+    $title = $mysqli->real_escape_string(htmlentities($title));
+    $text = $mysqli->real_escape_string(htmlentities($text));
     $query = "insert into News (Title,Text,CreationDate) values ('$title','$text',Now())";
     if(!$mysqli->real_query($query))
     {
