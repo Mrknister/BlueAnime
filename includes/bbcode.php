@@ -1,6 +1,6 @@
 <?php
 function bbc2html($tmpText){
- /*[b]*/ $tmpText = preg_replace('#\[b\](.*)\[/b\]#isU', '<b>$1</span>', $tmpText);
+ /*[b]*/ $tmpText = preg_replace('#\[b\](.*)\[/b\]#isU', '<b>$1</b>', $tmpText);
  /*[i]*/ $tmpText = preg_replace('#\[i\](.*)\[/i\]#isU', '<i>$1</span>', $tmpText);
  /*[u]*/ $tmpText = preg_replace('#\[u\](.*)\[/u\]#isU', '<span style="text-decoration:underline">$1</span>', $tmpText);
  /*[color]*/ $tmpText = preg_replace('#\[color=(.*)\](.*)\[\/color\]#isU', '<span style="color:$1;">$2</span>', $tmpText);

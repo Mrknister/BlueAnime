@@ -42,7 +42,6 @@ else if(isset($_POST['submit']))
         {
             die("success");
         }
-        
     }
 }
 
