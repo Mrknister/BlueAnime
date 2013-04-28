@@ -42,7 +42,7 @@ grant select on BlueAnime.Verificationqueue to 'QueueWriter'@'localhost';
 grant select on BlueAnime.News to 'MessagesReader'@'localhost';
 grant select on BlueAnime.News to 'MessagesWriter'@'localhost';
 grant update on BlueAnime.News to 'MessagesWriter'@'localhost';
-grant insert on BlueAnime.News to 'MessagesWriter'@'localhost';
+grant delete on BlueAnime.News to 'MessagesWriter'@'localhost';
 
 grant select on BlueAnime.ChatMessages to 'MessagesReader'@'localhost';
 grant select on BlueAnime.Users to 'MessagesReader'@'localhost';
@@ -50,6 +50,8 @@ grant select on BlueAnime.Users to 'MessagesReader'@'localhost';
 grant select on BlueAnime.ChatMessages to 'MessagesWriter'@'localhost';
 grant update on BlueAnime.ChatMessages to 'MessagesWriter'@'localhost';
 grant insert on BlueAnime.ChatMessages to 'MessagesWriter'@'localhost';
+grant delete on BlueAnime.ChatMessages to 'MessagesWriter'@'localhost';
+
 
 flush privileges;
 

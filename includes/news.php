@@ -149,6 +149,26 @@ function create_news_entry($title,$text)
     return true;
     
 }
+function delete_news_entry($id)
+{
+	if(!is_numeric($id))
+	{ 
+		return false;
+	}
+	
+	require_once($_SERVER['DOCUMENT_ROOT'].'/includes/onlyadminallowed.php');
+	require_once($_SERVER['DOCUMENT_ROOT'].'/includes/mysqlconfig.php');
+	$mysqli = connect_with_messageswriter();
+	$query="delete from News where Id=$id";
+	$mysqli->real_query($query);
+	if(handle_mysql_error($mysqli,$query))
+    {
+        return false;
+    }
+    $mysqli->close();
+    return true;
+}
+
 ?>
 
 

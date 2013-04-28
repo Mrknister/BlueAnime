@@ -28,7 +28,12 @@ class NewsContent extends Content
         {
 ?>
 <div class="newsentry">
-    <div class="newstitle"><?php echo $newsentry->title; ?><?php if($user->is_admin()){ echo ' <a href="/admin/editnews.php?id='.$newsentry->id.'" style="font-size:14px;">(bearbeiten)</a>'; }?></div>
+    <div class="newstitle"><?php echo $newsentry->title; ?><?php
+     if($user->is_admin())
+     { 
+	     echo ' <a href="/admin/editnews.php?id='.$newsentry->id.'" style="font-size:14px;">(bearbeiten)</a>';
+  	     echo ' <a href="/admin/deletenews.php?id='.$newsentry->id.'" style="font-size:14px;">(l&ouml;schen)</a>';
+	     }?></div>
     <div class="newscontent">
         <?php echo $newsentry->text; ?>
     </div>

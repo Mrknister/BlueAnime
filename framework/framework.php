@@ -19,6 +19,7 @@ require_once $_SERVER['DOCUMENT_ROOT'].'/framework/php/widgets/chatwidget.php';
 require_once $_SERVER['DOCUMENT_ROOT'].'/framework/php/widgets/defaulttopwidget.php';
 require_once $_SERVER['DOCUMENT_ROOT'].'/framework/php/widgets/emptycontent.php';
 require_once $_SERVER['DOCUMENT_ROOT'].'/framework/php/widgets/newscontent.php';
+require_once $_SERVER['DOCUMENT_ROOT'].'/framework/php/widgets/aboutcontent.php';
 
 function get_default_page($content = null)
 {

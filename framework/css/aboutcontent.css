@@ -1,0 +1,18 @@
+#aboutcontent
+{
+	text-align: center;
+}
+
+#aboutcontent h1
+{
+direction:center;
+font-size:25px;
+color:#000000
+}
+
+#aboutcontent p
+{
+direction:left;
+font-size:15px;
+color:#000000;
+}

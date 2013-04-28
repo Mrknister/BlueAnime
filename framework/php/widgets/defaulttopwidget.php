@@ -37,7 +37,7 @@ class DefaultTopWidget extends TopWidget
         <?php } ?>
 </div>
 <div id="team">
-        <a href="/register.php" >&Uuml;ber uns</a>
+        <a href="/about.php" >&Uuml;ber uns</a>
 </div>
         
 
