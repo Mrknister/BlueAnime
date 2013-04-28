@@ -45,21 +45,21 @@ public function loadEntry($id)
 
 public function set($title,$text,$date = null)
 {
-    if(!is_numeric($id))
+    if(!is_numeric($this->id))
     {
         return false;
     }
     
     if($date === null)
     {
-        return set_title_text($title,$text);
+        return $this->set_title_text($title,$text);
     }
     require_once($_SERVER['DOCUMENT_ROOT'].'/includes/mysqlconfig.php');
     require_once($_SERVER['DOCUMENT_ROOT'].'/includes/onlyadminallowed.php');
     
     $mysqli = connect_with_messageswriter();
-    $title = $mysqli->real_escape_string($title);
-    $text = $mysqli->real_escape_string($text);
+    $title = $mysqli->real_escape_string(htmlentities($title));
+    $text = $mysqli->real_escape_string(htmlentities($text));
     $date = $mysqli->real_escape_string($date);
     
     $query = "update News set Title=$title, Text=$text, CreationDate=$date where Id=$id ";
@@ -73,9 +73,9 @@ public function set($title,$text,$date = null)
     
 }
 
-private function set_tile_text($title,$text)
+private function set_title_text($title,$text)
 {
-    if(!is_numeric($id))
+    if(!is_numeric($this->id))
     {
         return false;
     }
@@ -83,11 +83,10 @@ private function set_tile_text($title,$text)
     require_once($_SERVER['DOCUMENT_ROOT'].'/includes/onlyadminallowed.php');
     
     $mysqli = connect_with_messageswriter();
-    $title = $mysqli->real_escape_string($title);
-    $text = $mysqli->real_escape_string($text);
-    $date = $mysqli->real_escape_string($date);
+    $title = $mysqli->real_escape_string(htmlentities($title));
+    $text = $mysqli->real_escape_string(htmlentities($text));
     
-    $query = "update News set Title=$title, Text=$text where Id=$id ";
+    $query = "update News set Title='$title', Text='$text' where Id=$this->id ";
     $mysqli->real_query($query);
     if(handle_mysql_error($mysqli,$query))
     {

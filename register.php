@@ -56,7 +56,7 @@ if(isset($_POST['register']))
 $error = perform_registration();
 if($error===0)
 {
-header('Location: /home.php');
+header('Location: /index.php');
 exit(0);
 }
 else {

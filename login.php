@@ -9,7 +9,7 @@ if(isset($_POST['username']) && isset( $_POST['password'] ))
     $success =  $user->login($_POST['username'],  $_POST['password']);
     if($success === true)
     {
-        header('Location: /home.php');
+        header('Location: /index.php');
         exit(0);
     }
     

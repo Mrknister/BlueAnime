@@ -49,3 +49,11 @@
     padding:0;
     background-color: #f2f1f0;
 }
+#chatwidget a
+{
+	color:blue;
+}
+#chatwidget a:hover
+{
+	color:#f07746;
+}

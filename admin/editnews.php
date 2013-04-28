@@ -39,10 +39,10 @@ if(isset($_POST['submit']))
     $is_valid = default_post('title') & default_post('post');
     $title = $_POST['title'];
     $text = $_POST['post'];
-    $entry = new Entry($_GET['id']);
+    $entry = new NewsEntry($_GET['id']);
     if($entry->set($_POST['title'],$_POST['post']))
     {
-        die('success');
+        die('Erfolg! <a href="/index.php">Zur&uuml;ck zur Startseite</a>');
     }
     else
     {
@@ -63,8 +63,8 @@ else
 
 ?>
 <form action="editnews.php?id=<?php echo $_GET['id'];?>" method="post">
-<input type="text" name="title" value="<?php echo $title; ?>" placeholder="Titel" /><br>
-<textarea name="post" rows="10" cols="40"><?php echo $text; ?></textarea>
+<input type="text" name="title" value="<?php echo html_entity_decode($title); ?>" placeholder="Titel" /><br>
+<textarea name="post" rows="10" cols="40"><?php echo html_entity_decode($text); ?></textarea>
 <br>
 <input name="submit" value="Best&auml;tigen" type="submit" />
 </form>

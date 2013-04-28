@@ -40,7 +40,7 @@ else if(isset($_POST['submit']))
         require_once($_SERVER['DOCUMENT_ROOT'].'/includes/news.php');
         if(create_news_entry($_POST['title'],$_POST['post']))
         {
-            die("success");
+            die('Erfolg! <a href="/index.php">Zur&uuml;ck zur Startseite</a>');
         }
     }
 }
