@@ -27,7 +27,6 @@ class User
         {
             return;
         }
-        
     }
 
     public function login($name,$password)

@@ -4,14 +4,43 @@ class NewsEntry
 {
 public $id;
 public $title;
-public $news_text;
+public $text;
 public $date;
-public function __construct($id,$title,$text,$date)
+public function __construct($id=null,$title=null,$text=null,$date=null)
 {
     $this->id=$id;
     $this->title=$title;
     $this->text=$text;
     $this->date=$date;
+}
+public function loadEntry($id)
+{
+    if(!is_numeric($id))
+    {
+        return false;
+    }
+    $query = "select Title,Text,DATE_FORMAT(CreationDate,'%d.%m. %Y') as FormattedDate from News where Id=".$id;
+    require_once($_SERVER['DOCUMENT_ROOT'].'/includes/mysqlconfig.php');
+    require_once($_SERVER['DOCUMENT_ROOT'].'/includes/error.php');
+    $mysqli = connect_with_messagesreader();
+    $result = $mysqli->query($query);
+    if(handle_mysql_error($mysqli,$query))
+    {
+        return false;
+    }
+    if($result->num_rows!==1)
+    {
+        return false;
+    }
+    $array = $result->fetch_array();
+    
+    $this->id=$id;
+    $this->title=$array['Title'];
+    $this->text=$array['Text'];
+    $this->date=$array['FormattedDate'];
+    
+    return true;
+    
 }
 
 public function set($title,$text,$date = null)
@@ -37,7 +66,7 @@ public function set($title,$text,$date = null)
     $mysqli->real_query($query);
     if(handle_mysql_error($mysqli,$query))
     {
-            return false;
+        return false;
     }
     $mysqli->close();
     return true;
@@ -52,6 +81,20 @@ private function set_tile_text($title,$text)
     }
     require_once($_SERVER['DOCUMENT_ROOT'].'/includes/mysqlconfig.php');
     require_once($_SERVER['DOCUMENT_ROOT'].'/includes/onlyadminallowed.php');
+    
+    $mysqli = connect_with_messageswriter();
+    $title = $mysqli->real_escape_string($title);
+    $text = $mysqli->real_escape_string($text);
+    $date = $mysqli->real_escape_string($date);
+    
+    $query = "update News set Title=$title, Text=$text where Id=$id ";
+    $mysqli->real_query($query);
+    if(handle_mysql_error($mysqli,$query))
+    {
+        return false;
+    }
+    $mysqli->close();
+    return true;
 }
 }
 
